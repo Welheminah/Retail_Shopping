@@ -2,45 +2,53 @@
 
 
 	<title>Accel-Shopping | Product/{{list.name}}</title>
-{{!-- <script type="text/javascript" language="JavaScript">
-
-
+	<script type="text/javascript" language="JavaScript">
 		dataLayer.push({
+
 			'event': 'view_item',
+
 			'ecommerce': {
+
 				'items': [
+
 					{
+
 						'item_name': '{{list.name}}',       // Name or ID is required.
+
 						'price': '{{list.cost}}',
+
 						'item_category': '{{list.category}}'
+
 					}]
+
 			}
-		});
+
+		});  
+	</script>
 
 
- </script> --}}
 
+	{{!--
+	<script>
+		function formStart() {
+			var dataLayer = {
+				'formisSubmitted': false,
+				'formName': 'testing',
+				'formStatus': "",
+			}
+		}
 
-{{!-- <script>
-function formStart() {
-var dataLayer = {
-       'formisSubmitted' : false,
-        'formName' : 'testing',
-        'formStatus' : "",
-    }
-}
+		function formComplete() {
+			console.log('testing DL')
+			var dataLayer = {
+				'formisSubmitted': true,
+				'formName': 'testing',
+				'formStatus': "complete",
+			}
+			_satellite.track('globalFormComplete')
+		}
 
-function formComplete() {
-	console.log('testing DL')
-var dataLayer = {
-       'formisSubmitted' : true,
-       'formName' : 'testing',
-       'formStatus' : "complete",
-    }
-	_satellite.track('globalFormComplete')
-}
- 
-</script> --}}
+	</script> --}}
 </head>
 
 <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
@@ -216,8 +224,8 @@ var dataLayer = {
 				</div>
 			</div>
 
-			<div class="col-sm-9 padding-right" >
-				<div class="product-details" >
+			<div class="col-sm-9 padding-right">
+				<div class="product-details">
 					<!--product-details-->
 					<div class="col-sm-5">
 						<div class="view-product">
@@ -227,9 +235,9 @@ var dataLayer = {
 
 
 					</div>
-					<div class="col-sm-7" >
+					<div class="col-sm-7">
 
-						<div class="product-information" >
+						<div class="product-information">
 							<!--/product-information-->
 							<img src="" class="newarrival" alt="" />
 							<h2>{{list.name}}</h2>
@@ -238,7 +246,8 @@ var dataLayer = {
 							<span>
 								<span>ZAR R{{list.cost}}</span>
 
-								<form action="/form" method="POST" data-frmcontainer="testing" id="testing" name="testing">
+								<form action="/form" method="POST" data-frmcontainer="testing" id="testing"
+									name="testing">
 									<div>
 										<div></div>
 										<div></div>
@@ -285,7 +294,8 @@ var dataLayer = {
 									</div>
 
 									<div style="padding-top: 1em;">
-										<button type="submit" class="btn btn-primary" id="sub" onclick="formComplete()">Add To
+										<button type="submit" class="btn btn-primary" id="sub"
+											onclick="formComplete()">Add To
 											Cart</button>
 									</div>
 								</form>
