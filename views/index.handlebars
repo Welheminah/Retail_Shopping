@@ -4,9 +4,9 @@
 	<title>Accel-Shopping | Home</title>
 
 	<script>
-		function addToCart() {
+		function viewItem() {
 			dataLayer.push({
-				'event': 'add_to_cart',
+				'event': 'view_item',
 				'ecommerce': {
 					'items': [
 						{
@@ -193,7 +193,7 @@
 
 								<div class="choose">
 									<button type="submit" class="btn btn-primary" id="Urban Find" name="price"
-										value="/images/b.jpg" onclick="addToCart()" data-id="link_content"
+										value="/images/b.jpg" onclick="viewItem()" data-id="link_content"
 										data-text="How about now? | Tell me more button click"
 										data-intent="Informational" data-scope="hero banner">View</button>
 								</div>
