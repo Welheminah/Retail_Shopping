@@ -2,34 +2,18 @@
 
 	<title>Accel-Shopping | Shopping-Cart</title>
 
-	<script>
+	<script type="text/javascript" language="JavaScript">
 		function removeFromCart() {
-			gtag("event", "remove_from_cart", {
-				currency: "USD",
-				value: 7.77,
-				items: [
-					{
-						item_id: "SKU_12345",
-						item_name: "Stan and Friends Tee",
-						affiliation: "Google Merchandise Store",
-						coupon: "SUMMER_FUN",
-						currency: "USD",
-						discount: 2.22,
-						index: 0,
-						item_brand: "Google",
-						item_category: "Apparel",
-						item_category2: "Adult",
-						item_category3: "Shirts",
-						item_category4: "Crew",
-						item_category5: "Short sleeve",
-						item_list_id: "related_products",
-						item_list_name: "Related Products",
-						item_variant: "green",
-						location_id: "L_12345",
-						price: 9.99,
-						quantity: 1
-					}
-				]
+			dataLayer.push({
+				'event': 'remove_from_cart',
+				'ecommerce': {
+					'items': [
+						{
+							'item_name': '{{list.name}}',       // Name or ID is required.
+							'price': '{{list.cost}}',
+							'item_category': '{{list.category}}'
+						}]
+				}
 			});
 
 		}
