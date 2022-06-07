@@ -3,7 +3,21 @@
 
 	<title>Accel-Shopping | Home</title>
 
-	<script></script>
+	<script>
+		function addToCart() {
+			dataLayer.push({
+				'event': 'add_to_cart',
+				'ecommerce': {
+					'items': [
+						{
+							'item_name': '{{list.name}}',       // Name or ID is required.
+							'price': '{{list.cost}}',
+							'item_category': '{{list.category}}'
+						}]
+				}
+			});
+		}
+	</script>
 </head>
 
 <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
