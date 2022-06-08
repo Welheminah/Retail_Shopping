@@ -1,9 +1,22 @@
 <head>
 
 	<title>Accel-Shopping | Cart Review</title>
-<script>
+	<script type="text/javascript" language="JavaScript">
+		function purchase() {
+			dataLayer.push({
+				'event': 'purchase',
+				'ecommerce': {
+					'items': [
+						{
+							'item_name': '{{list.name}}',
+							'price': '{{list.cost}}',
+							'item_category': '{{list.category}}'
+						}]
+				}
+			});
 
-</script>
+		}
+	</script>
 
 </head>
 
@@ -55,10 +68,10 @@
 		<div class="shopper-informations">
 			<div class="row">
 				<div class="col-sm-3">
-					<div class="shopper-info" >
+					<div class="shopper-info">
 						<p>Shopper Information</p>
 						<form data-frmcontainer="rest" id="rest" name="rest">
-							<input type="text" placeholder="Display Name" >
+							<input type="text" placeholder="Display Name">
 							<input type="text" placeholder="User Name">
 						</form>
 
@@ -110,7 +123,7 @@
 						</tr>
 				</tbody>
 			</table>
-			<button type="submit" class="btn btn-primary" name="price" value="/images/b.jpg">Procceed to
+			<button type="submit" class="btn btn-primary" name="price" value="/images/b.jpg" onclick="purchase()">Procceed to
 				Payment</button>
 		</div>
 		</form>
