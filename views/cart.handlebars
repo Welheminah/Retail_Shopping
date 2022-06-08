@@ -17,6 +17,21 @@
 			});
 
 		}
+
+		function beginCheckOut() {
+			dataLayer.push({
+				'event': 'begin_checkout',
+				'ecommerce': {
+					'items': [
+						{
+							'item_name': '{{list.name}}',
+							'price': '{{list.cost}}',
+							'item_category': '{{list.category}}'
+						}]
+				}
+			});
+
+		}
 	</script>
 
 </head>
@@ -121,7 +136,7 @@
 							<li>Total <span>R{{list.myTotal}}</span></li>
 						</ul>
 
-						<button type="submit" class="btn btn-primary" name="price" value="/images/b.jpg">Procceed to
+						<button type="submit" class="btn btn-primary" name="price" value="/images/b.jpg" onclick="beginCheckOut()">Procceed to
 							checkout</button>
 			</form>
 		</div>
