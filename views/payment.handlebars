@@ -1,7 +1,20 @@
 <head>
 
   <title>Accel-Shopping | Payment</title>
+	<script type="text/javascript" language="JavaScript">
+					dataLayer.push({
+				'event': 'purchase',
+				'ecommerce': {
+					'items': [
+						{
+							'item_name': '{{list.name}}',
+							'price': '{{list.cost}}',
+							'item_category': '{{list.category}}'
+						}]
+				}
+			});
 
+	</script>
 
 
 </head>
