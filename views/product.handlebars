@@ -4,16 +4,16 @@
 	<title>Accel-Shopping | Product/{{list.name}}</title>
 	<script type="text/javascript" language="JavaScript">
 		dataLayer.push({
-				'event': 'view_item',
-				'ecommerce': {
-					'items': [
-						{
-							'item_name': '{{list.name}}',       // Name or ID is required.
+			'event': 'view_item',
+			'ecommerce': {
+				'items': [
+					{
+						'item_name': '{{list.name}}', 
 							'price': '{{list.cost}}',
-							'item_category': '{{list.category}}'
-						}]
-				}
-			});
+						'item_category': '{{list.category}}'
+					}]
+			}
+		});
 
 		function addToCart() {
 			dataLayer.push({
@@ -32,28 +32,6 @@
 
 	</script>
 
-
-	{{!--
-	<script>
-		function formStart() {
-			var dataLayer = {
-				'formisSubmitted': false,
-				'formName': 'testing',
-				'formStatus': "",
-			}
-		}
-
-		function formComplete() {
-			console.log('testing DL')
-			var dataLayer = {
-				'formisSubmitted': true,
-				'formName': 'testing',
-				'formStatus': "complete",
-			}
-			_satellite.track('globalFormComplete')
-		}
-
-	</script> --}}
 </head>
 
 <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
@@ -302,23 +280,24 @@
 										<button type="submit" class="btn btn-primary" id="sub" onclick="addToCart()">Add
 											To Cart</button>
 									</div> --}}
-										<div style="padding-top: 1em;">
-										<button type="submit" class="btn btn-primary" id="sub" onclick="addToCart()" onclick="formComplete()">Add To
+									<div style="padding-top: 1em;">
+										<button type="submit" class="btn btn-primary" id="sub" onclick="addToCart()">Add
+											To
 											Cart</button>
 									</div>
-						</form>
+								</form>
 
+						</div>
+						<!--/product-information-->
 					</div>
-					<!--/product-information-->
 				</div>
+				<!--/product-details-->
+
+
+
+
+
 			</div>
-			<!--/product-details-->
-
-
-
-
-
 		</div>
-	</div>
 	</div>
 </section>
