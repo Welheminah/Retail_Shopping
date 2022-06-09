@@ -1,18 +1,20 @@
 <head>
 
-  <title>Accel-Shopping | Payment</title>
+	<title>Accel-Shopping | Payment</title>
 	<script type="text/javascript" language="JavaScript">
-					dataLayer.push({
-				'event': 'purchase',
-				'ecommerce': {
-					'items': [
-						{
-							'item_name': '{{list.name}}',
-							'price': '{{list.cost}}',
-							'item_category': '{{list.category}}'
-						}]
-				}
-			});
+		dataLayer.push({
+			'event': 'purchase',
+			'ecommerce': {
+				'items': [
+					{
+						'item_name': '{{list.name}}',
+						'price': '{{list.cost}}',
+						'item_category': '{{list.category}}',
+						'quantity': '{{list.quantity}}',
+						'total': '{{list.total}}'
+					}]
+			}
+		});
 
 	</script>
 
@@ -45,56 +47,59 @@
 </nav>
 
 <section id="cart_items">
-		<div class="container">
-			<div class="breadcrumbs">
-				<ol class="breadcrumb">
-				  <li><a href="#">Home</a></li>
-				  <li class="active">Shopping Cart</li>
-				</ol>
-			</div>
-				<form action="payment" method="post">
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">SELECT A PAYMENT METHOD</label>
-        <select class="form-control" id="exampleFormControlSelect1" style="text-align: center;width:450px" name="payment" required>
-			
-		   <option>EFT</option>
-          <option >CREDIT OR DEBIT CARD</option>
-         
-
-        </select>
-      </div>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-
-  </div>
-  <input type="text" class="form-control" placeholder="Card Number" style="width: 450px;">
-  <div class="input-group-append">
-   
-  </div>
-</div>
+	<div class="container">
+		<div class="breadcrumbs">
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li class="active">Shopping Cart</li>
+			</ol>
 		</div>
-	</section> <!--/#cart_items-->
+		<form action="payment" method="post">
+			<div class="form-group">
+				<label for="exampleFormControlSelect1">SELECT A PAYMENT METHOD</label>
+				<select class="form-control" id="exampleFormControlSelect1" style="text-align: center;width:450px"
+					name="payment" required>
 
-	<section id="do_action">
-		<div class="container">
+					<option>EFT</option>
+					<option>CREDIT OR DEBIT CARD</option>
 
-			<div class="row">
 
-			
-				<div class="col-sm-6">
-					<div class="total_area">
-						<ul>
-							<li>Cart Sub Total <span>R{{list.myTotal}}</span></li>
-							<li>Eco Tax <span>R0</span></li>
-							<li>Shipping Cost <span>Free</span></li>
-							<li>Total <span>R{{list.myTotal}}</span></li>
-						</ul>
-							
-	            <button type="submit" class="btn btn-primary" name="price" value="/images/b.jpg" 
-				>Place Order</button>
-              </form>
-					</div>
+				</select>
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+
+				</div>
+				<input type="text" class="form-control" placeholder="Card Number" style="width: 450px;">
+				<div class="input-group-append">
+
+				</div>
+			</div>
+	</div>
+</section>
+<!--/#cart_items-->
+
+<section id="do_action">
+	<div class="container">
+
+		<div class="row">
+
+
+			<div class="col-sm-6">
+				<div class="total_area">
+					<ul>
+						<li>Cart Sub Total <span>R{{list.myTotal}}</span></li>
+						<li>Eco Tax <span>R0</span></li>
+						<li>Shipping Cost <span>Free</span></li>
+						<li>Total <span>R{{list.myTotal}}</span></li>
+					</ul>
+
+					<button type="submit" class="btn btn-primary" name="price" value="/images/b.jpg">Place
+						Order</button>
+					</form>
 				</div>
 			</div>
 		</div>
-	</section><!--/#do_action-->
+	</div>
+</section>
+<!--/#do_action-->
